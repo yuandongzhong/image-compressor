@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhotoDog - Fast and simple PNG and JPG images compressor</title>
+    <meta
+      name="google-site-verification"
+      content="AVupxWdP_ZccbTFi9yjCFs-10AStu43xb0elZ117Elg"
+    />
+    <meta
+      name="description"
+      content="Make your website faster and save bandwidth. PhotoDog optimizes your PNG or JPG images by 50-80% while preserving decent quality."
+    />
+    <link rel="stylesheet" type="text/css" href="css/basscss.css" />
+    <link rel="stylesheet" type="text/css" href="css/colors.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primitive-ui/dist/css/main.css"
+    />
+    <script type="text/javascript" src="js/pako/pako.min.js"></script>
+    <script type="text/javascript" src="js/compressorjs/compressor.js"></script>
+    <script type="text/javascript" src="js/upng/UPNG.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.4.0/dist/jszip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/filesize.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-165408942-3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-165408942-3");
+    </script>
+  </head>
+  <body onload="Go();">
+    <div class="mx-auto center" style="width: 80%; height: 100%;">
+      <span
+        style="
+          font-size: 1.5em;
+          display: inline-block;
+          padding: 2em 4em;
+          margin-top: 3rem;
+          margin-bottom: 5rem;
+          border: 5px dashed #555;
+          border-radius: 0.6em;
+          cursor: pointer;
+        "
+        onclick="showOpenDialog()"
+        >Drop your .png or .jpg files here!</span
+      >
+      <table id="result-table" class="align-middle" tyle="width: 100%;">
+        <tr>
+          <td>File</td>
+          <td>Original Size</td>
+          <td>Current Size</td>
+          <td>Link</td>
+          <td>Compress Rate</td>
+        </tr>
+      </table>
+
+      <button id="download-all" style="display: none;" onclick="saveAll()">
+        Download All
+      </button>
+    </div>
+  </body>
+</html>
